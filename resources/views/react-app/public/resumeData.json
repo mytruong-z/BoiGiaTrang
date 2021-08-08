@@ -50,26 +50,26 @@
     "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
     "organization":[
       {
-        "name":"Bao Luu",
-        "title":"The Boss",
+        "name":"The Boss",
+        "title":"Boi Gia",
         "graduated":"April 2021",
         "description":""
       },
       {
-        "name":"My Truong",
-        "title":"Engineering and technology",
+        "name":"Engineering and technology",
+        "title":"My Truong",
         "graduated":"April 2021",
         "description":"In charge of issues related to technology and money transfer."
       },
       {
-        "name":"Han Vo",
-        "title":"Information Analysis and Note Taking",
+        "name":"Information Analysis and Amanuensis",
+        "title":"Han Vo",
         "graduated":"May 2021",
         "description":"Analyze information from the market and take notes."
       },
       {
-        "name":"Tuong Luong",
-        "title":"Human Resource Management",
+        "name":"Human Resource Management",
+        "title":"Tuong Luong",
         "graduated":"June 2021",
         "description":"Control issues related to capital and human resources."
       }
@@ -130,7 +130,7 @@
       {
         "title":"CryptoBlades",
         "category":"(MVP Only) A React and Meteor based chat University project.",
-        "image":"cb-01.png",
+        "image":"cb-03.png",
         "url":"#"
       },
       {
@@ -142,13 +142,13 @@
       {
         "title":"CryptoBlades",
         "category":"(offline now) A fighting gear company I started",
-        "image":"cb-03.png",
+        "image":"cb-04.jpeg",
         "url":"#"
       },
       {
         "title":"CryptoBlades",
         "category":"Website I built for a restaurant I like in Thailand",
-        "image":"cb-04.jpeg",
+        "image":"cb-01.png",
         "url":"#"
       }
     ]

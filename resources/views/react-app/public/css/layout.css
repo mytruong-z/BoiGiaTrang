@@ -1026,3 +1026,7 @@ footer .social-links li:first-child { margin-left: 0; }
 .cs-mt-8 {
     margin-top: 8px;
 }
+
+textarea {
+    resize: none;
+}
