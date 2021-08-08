@@ -1,0 +1,156 @@
+{
+  "main": {
+    "name":"BoiGiaTrang",
+    "description":"Wealth is the progressive realization of worthy goals, the ability to love and have compassion, meaningful and caring relationships.",
+    "description2":"Ricky is the battle of the Richest.",
+    "image":"profilepic.jpeg",
+    "bio":"Ricky is the battle of the Richest.",
+    "contactmessage":"Here is where you should write your message to readers to have them get in contact with you.",
+    "email": "baogiatrang4b@gmail.com",
+    "phone": "27-27-27",
+    "github":"https://github.com/mytruong-z",
+    "project":"https://github.com/mytruong-z",
+    "address":{
+      "street":"(Your Street)",
+      "city":"Ho Chi Minh",
+      "state":"Viet Nam",
+      "zip": "7000"
+    },
+    "website": "http://www.timbakerdev.com",
+    "resumedownload":"http://timbakerdev.com",
+    "social":[
+      {
+        "name":"facebook",
+        "url":"https://www.facebook.com/ngocmytruong.truong/",
+        "className":"fa fa-facebook"
+      },
+      {
+        "name":"twitter",
+        "url":"https://twitter.com/mytruong1999",
+        "className":"fa fa-twitter"
+      },
+      {
+        "name":"linkedin",
+        "url":"https://www.linkedin.com/in/my-ngoc-truong/",
+        "className":"fa fa-linkedin"
+      },
+      {
+        "name":"instagram",
+        "url":"http://instagram.com",
+        "className":"fa fa-instagram"
+      },
+      {
+        "name":"github",
+        "url":"https://github.com/mytruong-z",
+        "className":"fa fa-github"
+      }
+    ]
+  },
+  "resume":{
+    "skillmessage":"Here you can create a short write-up of your skills to show off to employers",
+    "organization":[
+      {
+        "name":"Bao Luu",
+        "title":"The Boss",
+        "graduated":"April 2021",
+        "description":""
+      },
+      {
+        "name":"My Truong",
+        "title":"Engineering and technology",
+        "graduated":"April 2021",
+        "description":"In charge of issues related to technology and money transfer."
+      },
+      {
+        "name":"Han Vo",
+        "title":"Information Analysis and Note Taking",
+        "graduated":"May 2021",
+        "description":"Analyze information from the market and take notes."
+      },
+      {
+        "name":"Tuong Luong",
+        "title":"Human Resource Management",
+        "graduated":"June 2021",
+        "description":"Control issues related to capital and human resources."
+      }
+    ],
+    "skills":[
+      {
+        "name":"Evaluate",
+        "level":"99%"
+      },
+      {
+        "name":"Analysis",
+        "level":"80%"
+      },
+      {
+        "name":"Technology",
+        "level":"80%"
+      },
+      {
+        "name":"Manage",
+        "level":"90%"
+      },
+      {
+        "name":"Risk control",
+        "level":"80%"
+      },
+      {
+        "name":"TD3K",
+        "level":"100%"
+      }
+    ]
+  },
+  "portfolio":{
+    "projects": [
+      {
+        "title":"Axie Infinity",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"axs-01.jpeg",
+        "url":"#"
+      },
+      {
+        "title":"Axie Infinity",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"axs-02.png",
+        "url":"#"
+      },
+      {
+        "title":"Axie Infinity",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"axs-03.png",
+        "url":"#"
+      },
+      {
+        "title":"Axie Infinity",
+        "category":"A React based resume website template",
+        "image":"axs-04.png",
+        "url":"#"
+      },
+      {
+        "title":"CryptoBlades",
+        "category":"(MVP Only) A React and Meteor based chat University project.",
+        "image":"cb-01.png",
+        "url":"#"
+      },
+      {
+        "title":"CryptoBlades",
+        "category":"My Travel Blog for my post-university travels",
+        "image":"cb-02.png",
+        "url":"#"
+      },
+      {
+        "title":"CryptoBlades",
+        "category":"(offline now) A fighting gear company I started",
+        "image":"cb-03.png",
+        "url":"#"
+      },
+      {
+        "title":"CryptoBlades",
+        "category":"Website I built for a restaurant I like in Thailand",
+        "image":"cb-04.jpeg",
+        "url":"#"
+      }
+    ]
+  }
+}

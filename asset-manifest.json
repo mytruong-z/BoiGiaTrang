@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mytruong-z.github.io/BoiGiaTrang/static/css/main.bab0b925.chunk.css",
+    "main.js": "/mytruong-z.github.io/BoiGiaTrang/static/js/main.5c255380.chunk.js",
+    "main.js.map": "/mytruong-z.github.io/BoiGiaTrang/static/js/main.5c255380.chunk.js.map",
+    "runtime-main.js": "/mytruong-z.github.io/BoiGiaTrang/static/js/runtime-main.4de84d94.js",
+    "runtime-main.js.map": "/mytruong-z.github.io/BoiGiaTrang/static/js/runtime-main.4de84d94.js.map",
+    "static/js/2.a25c794a.chunk.js": "/mytruong-z.github.io/BoiGiaTrang/static/js/2.a25c794a.chunk.js",
+    "static/js/2.a25c794a.chunk.js.map": "/mytruong-z.github.io/BoiGiaTrang/static/js/2.a25c794a.chunk.js.map",
+    "static/js/3.37192441.chunk.js": "/mytruong-z.github.io/BoiGiaTrang/static/js/3.37192441.chunk.js",
+    "static/js/3.37192441.chunk.js.map": "/mytruong-z.github.io/BoiGiaTrang/static/js/3.37192441.chunk.js.map",
+    "index.html": "/mytruong-z.github.io/BoiGiaTrang/index.html",
+    "static/css/main.bab0b925.chunk.css.map": "/mytruong-z.github.io/BoiGiaTrang/static/css/main.bab0b925.chunk.css.map",
+    "static/js/2.a25c794a.chunk.js.LICENSE.txt": "/mytruong-z.github.io/BoiGiaTrang/static/js/2.a25c794a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4de84d94.js",
+    "static/js/2.a25c794a.chunk.js",
+    "static/css/main.bab0b925.chunk.css",
+    "static/js/main.5c255380.chunk.js"
+  ]
+}
