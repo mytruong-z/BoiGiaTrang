@@ -61,7 +61,7 @@ class AxieReportsCrudController extends CrudController
 
         CRUD::setFromDb(); // fields
 
-        CRUD::removeField('user_id');
+        /*CRUD::removeField('user_id');
         CRUD::addField([
             'label'     => "User",
             'type'      => "select",
@@ -72,7 +72,7 @@ class AxieReportsCrudController extends CrudController
             'options'   => (function ($query) {
                 return $query->orderBy('name', 'ASC')->get();
             }),
-        ]);
+        ]);*/
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

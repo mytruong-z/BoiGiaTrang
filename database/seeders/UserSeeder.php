@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'name'     => 'Boi Gia Trang (master)',
             'email'    => 'baogiatrang4b@gmail.com',
-            'password' => bcrypt(env('MASTER_PASS')),//asdadsa2727
+            'password' => bcrypt(env('MASTER_PASS')),
             'is_admin' => 1,
         ]);
     }
