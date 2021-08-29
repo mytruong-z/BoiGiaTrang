@@ -11,11 +11,11 @@ $uri = urldecode(
     parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
 
-if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
+/*if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
     $protocol = "https://" . $_SERVER['HTTP_HOST'];
 } else {
     $protocol = 'http://' . $_SERVER['HTTP_HOST'];
-}
+}*/
 
 
 // This file allows us to emulate Apache's "mod_rewrite" functionality from the
