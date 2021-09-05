@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UsersRequest;
-use App\Models\User;
+use App\Http\Requests\CryptoFollowRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Illuminate\Http\Request;
 
 /**
- * Class UsersCrudController
+ * Class CryptoFollowCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class UsersCrudController extends CrudController
+class CryptoFollowCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -28,9 +26,9 @@ class UsersCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Users::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/users');
-        CRUD::setEntityNameStrings('users', 'users');
+        CRUD::setModel(\App\Models\CryptoFollow::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/crypto-follow');
+        CRUD::setEntityNameStrings('crypto follow', 'crypto follows');
     }
 
     /**
@@ -42,7 +40,11 @@ class UsersCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
-        CRUD::removeColumn('email_verified_at');
+        $this->crud->addColumn([
+            'name'  => 'created_at', // The db column name
+            'label' => "Time", // Table column heading
+            'type'  => "datetime",
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,12 +61,39 @@ class UsersCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(UsersRequest::class);
+        CRUD::setValidation(CryptoFollowRequest::class);
 
         CRUD::setFromDb(); // fields
-        CRUD::removeField('id');
-        CRUD::removeField('remember_token');
-        CRUD::removeField('email_verified_at');
+        CRUD::removeField('note');
+        CRUD::removeField('percentage');
+        CRUD::removeField('highest');
+
+        CRUD::addField([
+            'label'     => "Highest",
+            'type'      => "number",
+            'name'      => "highest",
+            'attributes' => ["step" => "any"], // allow decimals
+            'prefix' => "$",
+        ]);
+        CRUD::addField([
+            'label'     => "Lowest",
+            'type'      => "number",
+            'name'      => "lowest",
+            'attributes' => ["step" => "any"], // allow decimals
+            'prefix' => "$",
+        ]);
+        CRUD::addField([
+            'label'     => "Percentage",
+            'type'      => "number",
+            'name'      => "percentage",
+            'attributes' => ["step" => "any"], // allow decimals
+            'prefix' => "%",
+        ]);
+        CRUD::addField([
+            'label'     => "Official web & general information",
+            'type'      => "summernote",
+            'name'      => "note"
+        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -82,37 +111,5 @@ class UsersCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-
-    /**
-     * NO changes here, just for demonstration...
-     */
-    public function store(Request $request)
-    {
-        // do something after save
-        $user = new User();
-        $user->is_admin = $request->is_admin;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->save();
-        $this->crud->setSaveAction();
-
-        return $this->crud->performSaveAction();
-    }
-
-    /**
-     * Got some important additions here...
-     */
-    public function update(Request $request)
-    {
-        $user = User::find($request->id);
-        $user->is_admin = $request->is_admin;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password =  bcrypt($request->password);
-        $user->save();
-
-        return $this->crud->performSaveAction();
     }
 }

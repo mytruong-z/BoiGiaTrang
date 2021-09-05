@@ -26,7 +26,12 @@ class AxiesRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required',
+            'price' => 'required',
+            'amount' => 'required',
+            'rating' => 'required',
+            'description' => 'required',
+            'user_id' => 'required',
         ];
     }
 

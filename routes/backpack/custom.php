@@ -18,4 +18,7 @@ Route::group([
     Route::crud('axie-reports', 'AxieReportsCrudController');
     Route::crud('users', 'UsersCrudController');
     Route::crud('crypto', 'CryptoCrudController');
+    Route::crud('crypto-follow', 'CryptoFollowCrudController');
+    Route::crud('crypto-hold', 'CryptoHoldCrudController');
+    Route::crud('crypto-blades', 'CryptoBladesCrudController');
 }); // this should be the absolute last line of this file

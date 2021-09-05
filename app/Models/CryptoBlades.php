@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class AxieReports extends Model
+class CryptoBlades extends Model
 {
     use CrudTrait;
 
@@ -15,9 +15,10 @@ class AxieReports extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'axie_reports';
-    // protected $primaryKey = 'id';
+    protected $table = 'crypto_blades';
     public $timestamps = true;
+    // protected $primaryKey = 'id';
+    // public $timestamps = false;
     protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
@@ -34,11 +35,6 @@ class AxieReports extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
 
     /*
     |--------------------------------------------------------------------------

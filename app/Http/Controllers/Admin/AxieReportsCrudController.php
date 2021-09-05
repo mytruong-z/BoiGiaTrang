@@ -39,8 +39,14 @@ class AxieReportsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+        $this->crud->addColumn([
+            'name' => 'user_id', // The db column name
+            'label' => "User", // Table column heading
+            'entity'    => 'user',
+            'attribute' => "name",
+            'model'     => "App\Models\Users",
+        ]);
         CRUD::setFromDb(); // columns
-
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -60,8 +66,15 @@ class AxieReportsCrudController extends CrudController
         CRUD::setValidation(AxieReportsRequest::class);
 
         CRUD::setFromDb(); // fields
+        CRUD::removeField('note');
 
-        /*CRUD::removeField('user_id');
+        CRUD::addField([
+            'label'     => "Note",
+            'type'      => "summernote",
+            'name'      => 'note'
+        ]);
+
+        CRUD::removeField('user_id');
         CRUD::addField([
             'label'     => "User",
             'type'      => "select",
@@ -72,7 +85,7 @@ class AxieReportsCrudController extends CrudController
             'options'   => (function ($query) {
                 return $query->orderBy('name', 'ASC')->get();
             }),
-        ]);*/
+        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

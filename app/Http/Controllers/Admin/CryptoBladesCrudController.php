@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UsersRequest;
-use App\Models\User;
+use App\Http\Requests\CryptoBladesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use Illuminate\Http\Request;
 
 /**
- * Class UsersCrudController
+ * Class CryptoBladesCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class UsersCrudController extends CrudController
+class CryptoBladesCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -28,9 +26,9 @@ class UsersCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Users::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/users');
-        CRUD::setEntityNameStrings('users', 'users');
+        CRUD::setModel(\App\Models\CryptoBlades::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/crypto-blades');
+        CRUD::setEntityNameStrings('crypto blades', 'crypto blades');
     }
 
     /**
@@ -42,7 +40,14 @@ class UsersCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
-        CRUD::removeColumn('email_verified_at');
+        CRUD::removeColumn('user_id');
+        $this->crud->addColumn([
+            'name' => 'user_id', // The db column name
+            'label' => "User", // Table column heading
+            'entity'    => 'user',
+            'attribute' => "name",
+            'model'     => "App\Models\Users",
+        ]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,12 +64,31 @@ class UsersCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(UsersRequest::class);
+        CRUD::setValidation(CryptoBladesRequest::class);
 
         CRUD::setFromDb(); // fields
-        CRUD::removeField('id');
-        CRUD::removeField('remember_token');
-        CRUD::removeField('email_verified_at');
+        CRUD::removeField('user_id');
+        CRUD::removeField('highest');
+
+        CRUD::addField([
+            'label'     => "User",
+            'type'      => "select",
+            'name'      => 'user_id',
+            'entity'    => 'user',
+            'attribute' => "name",
+            'model'     => "App\Models\Users",
+            'options'   => (function ($query) {
+                return $query->orderBy('name', 'ASC')->get();
+            }),
+        ]);
+
+        CRUD::addField([
+            'label'     => "Profit",
+            'type'      => "number",
+            'name'      => "profit",
+            'attributes' => ["step" => "any"], // allow decimals
+            'prefix' => "$",
+        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
@@ -82,37 +106,5 @@ class UsersCrudController extends CrudController
     protected function setupUpdateOperation()
     {
         $this->setupCreateOperation();
-    }
-
-    /**
-     * NO changes here, just for demonstration...
-     */
-    public function store(Request $request)
-    {
-        // do something after save
-        $user = new User();
-        $user->is_admin = $request->is_admin;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->save();
-        $this->crud->setSaveAction();
-
-        return $this->crud->performSaveAction();
-    }
-
-    /**
-     * Got some important additions here...
-     */
-    public function update(Request $request)
-    {
-        $user = User::find($request->id);
-        $user->is_admin = $request->is_admin;
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password =  bcrypt($request->password);
-        $user->save();
-
-        return $this->crud->performSaveAction();
     }
 }

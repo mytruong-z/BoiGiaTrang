@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AxieReportsRequest extends FormRequest
+class CryptoFollowRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,12 +26,11 @@ class AxieReportsRequest extends FormRequest
     public function rules()
     {
         return [
-            'slp' => 'required',
-            'ruin' => 'required',
-            'level' => 'required',
-            'rank' => 'required',
-            'note' => 'required',
-            'user_id' => 'required',
+            'name' => 'required',
+            'highest' => 'required',
+            'lowest' => 'required',
+            'percentage' => 'required|numeric',
+            'note' => 'required'
         ];
     }
 

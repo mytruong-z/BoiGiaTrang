@@ -40,6 +40,14 @@ class AxiesCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::setFromDb(); // columns
+        CRUD::removeColumn('user_id');
+        $this->crud->addColumn([
+            'name' => 'user_id', // The db column name
+            'label' => "User", // Table column heading
+            'entity'    => 'user',
+            'attribute' => "name",
+            'model'     => "App\Models\Users",
+        ]);
         //CRUD::column('user_id')->type('select')->name('User')->entity('parent')->attribute('user')->model('App\Models\User');
 
         /**
@@ -61,6 +69,14 @@ class AxiesCrudController extends CrudController
 
         CRUD::setFromDb(); // fields
         CRUD::removeField('user_id');
+
+        CRUD::removeField('description');
+        CRUD::addField([
+            'label'     => "Description",
+            'type'      => "summernote",
+            'name'      => 'description'
+        ]);
+
         CRUD::addField([
             'label'     => "User",
             'type'      => "select",
