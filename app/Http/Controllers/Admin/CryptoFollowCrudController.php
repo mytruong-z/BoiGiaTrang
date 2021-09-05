@@ -72,6 +72,7 @@ class CryptoFollowCrudController extends CrudController
             'label'     => "Highest",
             'type'      => "number",
             'name'      => "highest",
+            'default'      => 0,
             'attributes' => ["step" => "any"], // allow decimals
             'prefix' => "$",
         ]);
@@ -79,6 +80,7 @@ class CryptoFollowCrudController extends CrudController
             'label'     => "Lowest",
             'type'      => "number",
             'name'      => "lowest",
+            'default'      => 0,
             'attributes' => ["step" => "any"], // allow decimals
             'prefix' => "$",
         ]);
@@ -86,6 +88,7 @@ class CryptoFollowCrudController extends CrudController
             'label'     => "Percentage",
             'type'      => "number",
             'name'      => "percentage",
+            'default'      => 0,
             'attributes' => ["step" => "any"], // allow decimals
             'prefix' => "%",
         ]);

@@ -66,15 +66,15 @@ class CryptoBladesCrudController extends CrudController
     {
         CRUD::setValidation(CryptoBladesRequest::class);
 
-        CRUD::setFromDb(); // fields
+        CRUD::setFromDb();
         CRUD::removeField('user_id');
-        CRUD::removeField('highest');
+        CRUD::removeField('profit');
 
         CRUD::addField([
             'label'     => "User",
             'type'      => "select",
-            'name'      => 'user_id',
-            'entity'    => 'user',
+            'name'      => "user_id",
+            'entity'    => "user",
             'attribute' => "name",
             'model'     => "App\Models\Users",
             'options'   => (function ($query) {

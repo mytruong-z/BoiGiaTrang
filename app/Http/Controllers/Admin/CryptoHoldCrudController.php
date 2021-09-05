@@ -81,6 +81,7 @@ class CryptoHoldCrudController extends CrudController
             'label'     => "Amount",
             'type'      => "number",
             'name'      => "amount",
+            'default'      => 0,
             'attributes' => ["step" => "any"], // allow decimals
         ]);
 
@@ -95,6 +96,7 @@ class CryptoHoldCrudController extends CrudController
             'label'     => "Average Price",
             'type'      => "number",
             'name'      => "average_price",
+            'default'      => 0,
             'attributes' => ["step" => "any"], // allow decimals
             'prefix' => "$",
         ]);
@@ -102,6 +104,7 @@ class CryptoHoldCrudController extends CrudController
         CRUD::addField([
             'label'     => "Pre money",
             'type'      => "number",
+            'default'      => 0,
             'name'      => "pre_money",
             'attributes' => ["step" => "any"], // allow decimals
             'prefix' => "$",
@@ -111,6 +114,7 @@ class CryptoHoldCrudController extends CrudController
             'label'     => "Sale price",
             'type'      => "number",
             'name'      => "sale_price",
+            'default'      => 0,
             'attributes' => ["step" => "any"], // allow decimals
             'prefix' => "$",
         ]);
@@ -124,6 +128,7 @@ class CryptoHoldCrudController extends CrudController
         CRUD::addField([
             'label'     => "Fixed money",
             'type'      => "number",
+            'default'      => 0,
             'name'      => "fixed_money",
             'attributes' => ["step" => "any"],
             'prefix' => "$",
