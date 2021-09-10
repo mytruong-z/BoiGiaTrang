@@ -27,6 +27,7 @@ class AxieReportsRequest extends FormRequest
     {
         return [
             'slp' => 'required',
+            'slp_inventory' => 'required',
             'ruin' => 'required',
             'level' => 'required',
             'rank' => 'required',

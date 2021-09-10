@@ -41,6 +41,7 @@ class CryptoBladesCrudController extends CrudController
     {
         CRUD::setFromDb(); // columns
         CRUD::removeColumn('user_id');
+
         $this->crud->addColumn([
             'name' => 'user_id', // The db column name
             'label' => "User", // Table column heading

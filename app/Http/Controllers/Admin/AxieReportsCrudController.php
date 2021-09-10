@@ -18,6 +18,7 @@ class AxieReportsCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\BulkDeleteOperation { bulkDelete as traitBulkDelete; }
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -41,12 +42,17 @@ class AxieReportsCrudController extends CrudController
     {
         $this->crud->addColumn([
             'name' => 'user_id', // The db column name
-            'label' => "User", // Table column heading
+            'label' => "Member", // Table column heading
             'entity'    => 'user',
             'attribute' => "name",
             'model'     => "App\Models\Users",
         ]);
+        $this->crud->addColumn([
+            'name' => 'created_at', // The db column name
+            'label' => "Date", // Table column heading
+        ]);
         CRUD::setFromDb(); // columns
+        CRUD::column('slp_inventory')->label('Inventory');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

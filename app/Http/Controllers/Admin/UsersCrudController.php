@@ -65,6 +65,13 @@ class UsersCrudController extends CrudController
         CRUD::removeField('id');
         CRUD::removeField('remember_token');
         CRUD::removeField('email_verified_at');
+        CRUD::removeField('note');
+
+        CRUD::addField([
+            'label'     => "Note",
+            'type'      => "summernote",
+            'name'      => 'note'
+        ]);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
