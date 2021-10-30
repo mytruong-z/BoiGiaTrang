@@ -5,6 +5,7 @@ import '../css/default.css';
 import '../css/layout.css';
 import '../css/media-queries.css';
 import '../css/magnific-popup.css';
+import '../js/bootstrap.js';
 import resumeDataJs from '../contains/resumeData.json';
 import Header from './components/Header';
 import Footer from './components/Footer';

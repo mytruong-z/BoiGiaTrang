@@ -165,6 +165,7 @@ header .scrolldown a:hover {
 }
 
 ul#nav {
+    background-color: #1c1c1c;
     display: block;
     min-height: 48px;
     width: auto;
